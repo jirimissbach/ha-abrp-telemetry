@@ -35,7 +35,7 @@ async def test_success_uses_headers_and_body_not_query_string():
     assert result.elevation_received
     url = session.post.call_args.args[0]
     kwargs = session.post.call_args.kwargs
-    assert url == "https://api.iternio.com/app/tlm"
+    assert url == "https://api.iternio.com/2/app/tlm"
     assert "api-secret" not in url and "token-secret" not in url
     assert kwargs["headers"]["X-API-KEY"] == "api-secret"
     assert kwargs["headers"]["X-TLM-TOKEN"] == "token-secret"

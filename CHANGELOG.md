@@ -1,5 +1,9 @@
 # Changelog
 
+## 0.1.1
+
+- Fix the ABRP Planning API v2 telemetry endpoint by including its `/2` server prefix.
+
 ## 0.1.0
 
 - Initial generic Home Assistant entity-to-ABRP telemetry bridge.
@@ -7,4 +11,3 @@
 - Event, periodic, and hybrid transmission; per-field freshness and restart safety.
 - Current `/app/tlm` header authentication and SI payload model.
 - Diagnostic entities, repairs, centralized redaction, bounded backoff, tests, and CI.
-

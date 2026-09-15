@@ -22,7 +22,7 @@ async def test_diagnostics_redact_credentials_and_never_include_gps(hass):
         },
     )
     manager = SimpleNamespace(
-        client=SimpleNamespace(endpoint="https://api.iternio.com/app/tlm"),
+        client=SimpleNamespace(endpoint="https://api.iternio.com/2/app/tlm"),
         stats=TransmissionStats(),
         mappings={"latitude": "sensor.lat"},
     )

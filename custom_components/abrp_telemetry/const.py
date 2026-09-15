@@ -37,7 +37,7 @@ MIN_STALE_AFTER: Final = 60
 MAX_STALE_AFTER: Final = 86400
 DEBOUNCE_SECONDS: Final = 1.0
 
-API_BASE_URL: Final = "https://api.iternio.com"
+API_BASE_URL: Final = "https://api.iternio.com/2"
 TELEMETRY_PATH: Final = "/app/tlm"
 API_TIMEOUT_SECONDS: Final = 15
 PROVIDER: Final = "APP_AUTO"

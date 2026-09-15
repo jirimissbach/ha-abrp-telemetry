@@ -87,7 +87,7 @@ These names are examples only and are never hard-coded. Manufacturer APIs common
 
 The vehicle device exposes status and last-success diagnostics. Attempt time, source age, and runtime-only success/failure counters are disabled by default to avoid clutter. Status can report waiting for source data, transmitting, connected, stale source data, authentication error, rate limited, or API error.
 
-Vehicle telemetry can be sensitive. The integration sends selected measurement values and their timestamps only to `https://api.iternio.com/app/tlm`. It has no analytics or external logging. Tokens and keys are header-only and never placed in URLs, logs, exceptions, entities, or diagnostics. Diagnostics centrally redact credentials and location. Debug logs describe categories and timing decisions but never payloads, precise coordinates, credentials, headers, or response bodies.
+Vehicle telemetry can be sensitive. The integration sends selected measurement values and their timestamps only to `https://api.iternio.com/2/app/tlm`. It has no analytics or external logging. Tokens and keys are header-only and never placed in URLs, logs, exceptions, entities, or diagnostics. Diagnostics centrally redact credentials and location. Debug logs describe categories and timing decisions but never payloads, precise coordinates, credentials, headers, or response bodies.
 
 ## Troubleshooting
 
@@ -116,4 +116,3 @@ ruff format --check .
 ```
 
 MIT licensed. ABRP and A Better Routeplanner are trademarks of their respective owner; this project is unofficial.
-

@@ -4,7 +4,7 @@ Research date: 2026-09-15. Authoritative sources were preferred; undocumented be
 
 ## Resolved research questions
 
-1. **Current endpoint:** `POST https://api.iternio.com/app/tlm`. The current Iternio Planning API OpenAPI calls this the legacy-v1-token batch telemetry endpoint. The older `/1/tlm/send` query-string endpoint is not used.
+1. **Current endpoint:** `POST https://api.iternio.com/2/app/tlm`. The current Iternio Planning API OpenAPI declares `https://api.iternio.com/2` as its server and calls `/app/tlm` the legacy-v1-token batch telemetry endpoint. The older `/1/tlm/send` query-string endpoint is not used.
 2. **Authentication:** `X-TLM-TOKEN` authorizes the vehicle write. `X-API-KEY` is also required, must carry `post_data`, and attributes points to an integration. Users can create a self-managed key at <https://abetterrouteplanner.com/home/app/api-keys/telemetry>. Both are sent only as headers.
 3. **Supported input fields:** battery capacity, battery temperature, cabin setpoint, cabin temperature, charging state, driving state, elevation, estimated battery range, external temperature, HVAC power, charging energy added, location, odometer, power, SOC, state of energy, state of health, speed, voltage, heading, and current, plus the required provider identifier.
 4. **Required fields:** the `InputPoint` schema requires only `provider`; every measurement is optional. This implementation nevertheless requires at least one mapped measurement before setup and labels SOC as highly recommended.
