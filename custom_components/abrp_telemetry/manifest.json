@@ -1,0 +1,14 @@
+{
+  "domain": "abrp_telemetry",
+  "name": "ABRP Telemetry",
+  "after_dependencies": [],
+  "codeowners": ["@jirimissbach"],
+  "config_flow": true,
+  "dependencies": [],
+  "documentation": "https://github.com/jirimissbach/ha-abrp-telemetry",
+  "integration_type": "service",
+  "iot_class": "cloud_push",
+  "issue_tracker": "https://github.com/jirimissbach/ha-abrp-telemetry/issues",
+  "requirements": [],
+  "version": "0.1.0"
+}

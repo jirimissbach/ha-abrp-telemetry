@@ -1,0 +1,195 @@
+{
+  "title": "ABRP Telemetry",
+  "config": {
+    "step": {
+      "user": {
+        "title": "Add an ABRP vehicle",
+        "description": "Enter the telemetry token for this vehicle and a self-managed ABRP API key with `post_data` permission. Credentials are checked when the first real telemetry snapshot is sent because ABRP documents no non-mutating credential-check endpoint.",
+        "data": {
+          "vehicle_name": "Vehicle name",
+          "api_key": "ABRP API key",
+          "telemetry_token": "ABRP telemetry token"
+        }
+      },
+      "mappings": {
+        "title": "Map Home Assistant entities",
+        "description": "State of charge is highly recommended. Every other field is optional. Periodic uploads repeat the newest valid values; they do not refresh the source vehicle data.",
+        "data": {
+          "soc": "State of charge (recommended)",
+          "estimated_range": "Estimated range",
+          "charging_state": "Charging state",
+          "charging_power": "Charging power",
+          "vehicle_power": "Vehicle power",
+          "speed": "Speed",
+          "latitude": "Latitude",
+          "longitude": "Longitude",
+          "elevation": "Elevation",
+          "battery_temperature": "Battery temperature",
+          "ambient_temperature": "Ambient temperature",
+          "odometer": "Odometer",
+          "hvac_power": "HVAC power",
+          "hvac_setpoint": "HVAC setpoint",
+          "cabin_temperature": "Cabin temperature",
+          "battery_capacity": "Battery capacity",
+          "energy_remaining": "Remaining battery energy",
+          "state_of_health": "State of health",
+          "voltage": "Battery voltage",
+          "current": "Battery current",
+          "heading": "Heading",
+          "charging_energy_added": "Charging energy added",
+          "driving_state": "Driving state",
+          "mode": "Transmission mode",
+          "interval": "Periodic interval",
+          "stale_after": "Maximum source-data age"
+        }
+      },
+      "units": {
+        "title": "Confirm source units",
+        "description": "These entities do not expose a recognized unit. Select the unit of the value stored in Home Assistant.",
+        "data": {
+          "soc": "State of charge unit",
+          "estimated_range": "Estimated range unit",
+          "charging_power": "Charging power unit",
+          "vehicle_power": "Vehicle power unit",
+          "speed": "Speed unit",
+          "elevation": "Elevation unit",
+          "battery_temperature": "Battery temperature unit",
+          "ambient_temperature": "Ambient temperature unit",
+          "odometer": "Odometer unit",
+          "hvac_power": "HVAC power unit",
+          "hvac_setpoint": "HVAC setpoint unit",
+          "cabin_temperature": "Cabin temperature unit",
+          "battery_capacity": "Battery capacity unit",
+          "energy_remaining": "Remaining battery energy unit",
+          "state_of_health": "State of health unit",
+          "charging_energy_added": "Charging energy added unit",
+          "voltage": "Battery voltage unit",
+          "current": "Battery current unit"
+        }
+      },
+      "reauth_confirm": {
+        "title": "Update ABRP credentials",
+        "description": "ABRP rejected the credentials for this vehicle.",
+        "data": {
+          "api_key": "ABRP API key",
+          "telemetry_token": "ABRP telemetry token"
+        }
+      }
+    },
+    "error": {
+      "invalid_credentials": "Both credentials are required",
+      "mapping_required": "Map at least one telemetry entity",
+      "location_pair_required": "Latitude and longitude must be mapped together"
+    },
+    "abort": {
+      "already_configured": "This ABRP telemetry token is already configured",
+      "reauth_successful": "Credentials updated"
+    }
+  },
+  "options": {
+    "step": {
+      "init": {
+        "title": "Telemetry mappings and scheduling",
+        "data": {
+          "soc": "State of charge (recommended)",
+          "estimated_range": "Estimated range",
+          "charging_state": "Charging state",
+          "charging_power": "Charging power",
+          "vehicle_power": "Vehicle power",
+          "speed": "Speed",
+          "latitude": "Latitude",
+          "longitude": "Longitude",
+          "elevation": "Elevation",
+          "battery_temperature": "Battery temperature",
+          "ambient_temperature": "Ambient temperature",
+          "odometer": "Odometer",
+          "hvac_power": "HVAC power",
+          "hvac_setpoint": "HVAC setpoint",
+          "cabin_temperature": "Cabin temperature",
+          "battery_capacity": "Battery capacity",
+          "energy_remaining": "Remaining battery energy",
+          "state_of_health": "State of health",
+          "voltage": "Battery voltage",
+          "current": "Battery current",
+          "heading": "Heading",
+          "charging_energy_added": "Charging energy added",
+          "driving_state": "Driving state",
+          "mode": "Transmission mode",
+          "interval": "Periodic interval",
+          "stale_after": "Maximum source-data age"
+        }
+      },
+      "charging_states": {
+        "title": "Custom charging states",
+        "description": "Optional: enter comma-separated source values only if your integration uses unusual charging states.",
+        "data": {
+          "charging_ac_values": "AC charging values",
+          "charging_dc_values": "DC charging values",
+          "charging_values": "Charging, type unknown values",
+          "plugged_values": "Plugged in or paused values",
+          "not_charging_values": "Not charging values"
+        }
+      },
+      "units": {
+        "title": "Confirm source units",
+        "data": {
+          "soc": "State of charge unit",
+          "estimated_range": "Estimated range unit",
+          "charging_power": "Charging power unit",
+          "vehicle_power": "Vehicle power unit",
+          "speed": "Speed unit",
+          "elevation": "Elevation unit",
+          "battery_temperature": "Battery temperature unit",
+          "ambient_temperature": "Ambient temperature unit",
+          "odometer": "Odometer unit",
+          "hvac_power": "HVAC power unit",
+          "hvac_setpoint": "HVAC setpoint unit",
+          "cabin_temperature": "Cabin temperature unit",
+          "battery_capacity": "Battery capacity unit",
+          "energy_remaining": "Remaining battery energy unit",
+          "state_of_health": "State of health unit",
+          "charging_energy_added": "Charging energy added unit",
+          "voltage": "Battery voltage unit",
+          "current": "Battery current unit"
+        }
+      }
+    },
+    "error": {
+      "mapping_required": "Map at least one telemetry entity",
+      "location_pair_required": "Latitude and longitude must be mapped together"
+    }
+  },
+  "selector": {
+    "transmission_mode": {
+      "options": {
+        "event": "Event driven",
+        "periodic": "Periodic",
+        "hybrid": "Hybrid"
+      }
+    }
+  },
+  "entity": {
+    "sensor": {
+      "status": {"name": "Status"},
+      "last_success": {"name": "Last successful upload"},
+      "last_attempt": {"name": "Last attempted upload"},
+      "newest_source_age": {"name": "Newest source-data age"},
+      "successful_transmissions": {"name": "Successful transmissions"},
+      "failed_transmissions": {"name": "Failed transmissions"}
+    }
+  },
+  "issues": {
+    "authentication_error": {
+      "title": "ABRP credentials were rejected",
+      "description": "ABRP rejected the API key or telemetry token for this vehicle. Update the credentials, then reload the integration. Uploads have been stopped to prevent repeated failed requests."
+    },
+    "mapped_entity_removed": {
+      "title": "A mapped telemetry entity was removed",
+      "description": "A Home Assistant entity mapped to this ABRP vehicle was removed. Restore the entity or update this vehicle's mappings in Configure."
+    },
+    "unsupported_source_unit": {
+      "title": "A mapped entity has an unsupported unit",
+      "description": "A mapped entity exposes a unit that cannot be safely converted for ABRP. Select the correct source unit in Configure or fix the source entity's unit. Other valid fields continue uploading."
+    }
+  }
+}

@@ -1,0 +1,14 @@
+__pycache__/
+*.py[cod]
+.coverage
+.pytest_cache/
+.ruff_cache/
+.mypy_cache/
+.venv/
+*.egg-info/
+htmlcov/
+dist/
+build/
+
+# Local ChatGPT project control file, not part of the public integration.
+AGENTS.md

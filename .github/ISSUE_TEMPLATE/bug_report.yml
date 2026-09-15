@@ -1,0 +1,34 @@
+name: Bug report
+description: Report a reproducible ABRP Telemetry problem
+title: "[Bug]: "
+labels: [bug]
+body:
+  - type: markdown
+    attributes:
+      value: Never paste API keys, telemetry tokens, precise GPS coordinates, or unredacted request headers.
+  - type: input
+    id: version
+    attributes:
+      label: Integration version
+    validations:
+      required: true
+  - type: input
+    id: ha_version
+    attributes:
+      label: Home Assistant version
+    validations:
+      required: true
+  - type: textarea
+    id: description
+    attributes:
+      label: What happened?
+      description: Include expected behavior and exact steps. Attach Home Assistant's redacted diagnostics if useful.
+    validations:
+      required: true
+  - type: textarea
+    id: logs
+    attributes:
+      label: Redacted debug logs
+      description: Remove credentials and precise location before submitting.
+      render: text
+
